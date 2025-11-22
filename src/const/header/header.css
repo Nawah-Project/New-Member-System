@@ -1,0 +1,21 @@
+/* Button */
+#nav-btn:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+#nav-btn::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #32C8ff;
+    border-radius: 15px;
+    transition: width 0.3s ease-in-out;
+}
+
+#nav-btn:hover::after {
+    width: 100%;
+}

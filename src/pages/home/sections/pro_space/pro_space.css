@@ -1,0 +1,44 @@
+#pro-space {
+    background-image: url('/home/pro_space/pro_space_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 2%;
+    margin-block: 2% 0px;
+}
+
+#pro-space h1 {
+    font-size: 5rem;
+    color: white;
+    margin-block: 4% 1%;
+}
+
+#pro-space-cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#pro-space-card {
+    width: 33%;
+    text-align: center;
+    color: white;
+}
+
+#pro-space-card img {
+    width: 90%;
+    height: 75vh;
+    margin-bottom: 1%;
+    border-radius: 3px;
+}
+
+#pro-space-card p {
+    font-size: 1rem;
+    margin-block: 3%;
+}

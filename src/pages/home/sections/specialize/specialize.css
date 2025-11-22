@@ -1,0 +1,87 @@
+#specialize-section {
+    background-image: url('/home/specialize/specialize-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    margin-block: 60px 10px;
+}
+
+#girl {
+    height: 70vh;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#girl img {
+    width: 100%;
+    scale: 0.9;
+}
+
+#mid-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+#mid-content h1 {
+    font-size: 4rem;
+    font-style: italic;
+}
+
+#mid-content p {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#mid-content div {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+#mid-content div button {
+    font-size: 1.5rem;
+    background-color: #141e37;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+#mid-content div button:hover {
+    background-color: white;
+    color: #141e37;
+}
+
+#man {
+    width: 30%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#man img {
+    width: 100%;
+    scale: 0.9;
+}
+
+#man img:hover,
+#girl img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}

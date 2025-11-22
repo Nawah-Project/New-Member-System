@@ -1,0 +1,10 @@
+#update-section {
+    padding: 2% 3%;
+}
+
+#section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 7%;
+}

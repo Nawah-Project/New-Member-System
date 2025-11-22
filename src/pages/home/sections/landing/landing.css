@@ -1,0 +1,21 @@
+#cover-color {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#landing button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid white;
+}

@@ -1,0 +1,37 @@
+#collaporate-section {
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+#right {
+    width: 48%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+#right h1{
+    font-size: 4rem;
+    font-style: italic;
+}
+
+#right p{
+    font-size: 1.5rem;
+}
+
+#left {
+    width: 48%;
+}
+
+#left iframe{
+    width: 90%;
+    height: 45vh;
+    border: none;
+    border-radius: 5px;
+}
