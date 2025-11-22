@@ -1,4 +1,4 @@
-#specialize-section {
+/* #specialize-section {
     background-image: url('/home/specialize/specialize-bg.jpg');
     background-position: center;
     background-size: cover;
@@ -84,4 +84,4 @@
 #girl img:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
-}
+} */
