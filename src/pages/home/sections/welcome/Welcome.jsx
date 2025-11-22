@@ -73,6 +73,7 @@ export default function Welcome() {
                             '&:hover': {
                                 backgroundColor: "#fff",
                                 color: "#141e37",
+                                transition: 'all 0.4s ease-in-out',
                             }
 
                         }}>
