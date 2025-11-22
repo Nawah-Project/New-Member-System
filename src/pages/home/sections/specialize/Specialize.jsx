@@ -1,7 +1,8 @@
 import './specialize.css'
+import { Box } from '@mui/material'
 export default function Specialize() {
     return (
-        <div id="specialize-section">
+        <Box id="specialize-section">
             <div id="girl">
                 <img src="home/specialize/right-image.png" alt="girl"  />
             </div>
@@ -16,6 +17,6 @@ export default function Specialize() {
             <div id="man">
                 <img src="home/specialize/left-image.png" alt="girl" />
             </div>
-        </div>
+        </Box>
     )
 }
