@@ -14,6 +14,10 @@ export default function Welcome() {
                         sm: "10rem",
                         md: "8rem",
                     },
+                    marginBlock: {
+                    sm: "4rem",
+                    md: "8rem",
+                },
                     paddingInline: {
                         xs: "1rem",
                         sm: "2rem",
@@ -83,7 +87,7 @@ export default function Welcome() {
                 </Grid>
                 <Grid size={{ xs: 12, md: 6 }} sx={{ width: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', marginInline: "auto", marginBlock: 'auto' }}>
 
-                    <CardMedia sx={{ objectFit: "cover", width: "100%", height: '100%' }} component="video" src="home/welcome/welcome_video.mp4" autoPlay loop muted controls />
+                    <CardMedia sx={{ objectFit: "cover", width: "100%", height: '100%' }} component="video" src="/home/welcome/welcome_video.mp4" autoPlay loop muted controls />
 
                 </Grid>
             </Grid>

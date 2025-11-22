@@ -37,6 +37,7 @@ export default function Updates() {
             <Box id="section-header">
                 <Typography
                     sx={{
+                        
                         fontSize: { xs: "2rem", md: "3rem" },
                         fontWeight: "bold",
                         fontStyle: "italic",

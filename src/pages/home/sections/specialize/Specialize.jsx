@@ -1,4 +1,3 @@
-import './specialize.css'
 import { Box, Typography, Button, Grid, CardMedia, useMediaQuery, useTheme, Link } from '@mui/material'
 export default function Specialize() {
     const theme = useTheme();
@@ -69,7 +68,7 @@ function CenterContent() {
             xs: '30vh',
             md: '70vh'
         }}>
-            <Box sx={{ height: '100%', display: "flex", flexDirection: "column", justifyContent: 'center', alignItems: 'start', gap: 2, paddingInline: '2%' }}>
+            <Box sx={{ height: '100%', display: "flex", flexDirection: "column", justifyContent: 'center', alignItems: 'start', gap: 3, paddingInline: '2%' }}>
                 <Typography variant="h2" fontStyle={'italic'} fontWeight={'bold'}>اختر تخصصك</Typography>
                 <Typography variant="p" fontSize={{ xs: '1rem', md: '1.5rem' }} fontWeight={'bold'}>صِغ أكوادك لتبني المستقبل، أو أطلق خيالك في تصميم تجربة تبهر المستخدمين، أو خطّط لمشاريع تُحدث فرقًا حقيقيًا في العالم. هناك تخصصات تتناسب مع كل شغفٍ وطموح.</Typography>
                 <Box sx={{
@@ -80,7 +79,12 @@ function CenterContent() {
                     width: '100%'
                 }}>
                     <Button variant="contained" sx={{
-                        width: { xs: '100%', md: 'auto' }, backgroundColor: '#141e37', color: 'white', fontWeight: 'bold', '&:hover': {
+                        width: { xs: '100%', md: 'auto' }, backgroundColor: '#141e37', color: 'white',
+                        paddingBlock: {
+                            xs: '3%',
+                            sm: '2%',
+                        },
+                        fontWeight: 'bold', '&:hover': {
                             backgroundColor: 'white',
                             color: '#141e37',
                             transition: 'all 0.4s ease-in-out',
