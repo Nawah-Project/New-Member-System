@@ -13,7 +13,6 @@ export default function Footer() {
                     backgroundColor: '#000',
                     color: 'white',
                     textAlign: 'center',
-                  
                 }}
             >
                 <Box
@@ -165,7 +164,7 @@ export default function Footer() {
                     <Link
 
                         style={{ color: "white", textDecoration: "none" }}
-                        
+
                         to="#">
                         <Typography
                             sx={{
