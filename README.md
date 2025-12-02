@@ -258,15 +258,15 @@ This is part of the Nawah Project initiative. For more information, visit our [G
 <table align="center" style="border: none; margin: 0 auto;">
   <tr>
     <td style="padding: 20px; margin: 0 15px; border: none; text-align: center;">
-      <img src="/develop_team/abdoo.png" alt="NAWAH Project Manager" width="150" />
+      <img src="/public/develop_team/abdoo.png" alt="NAWAH Project Manager" width="150" />
     </td>
     <td style="width: 80px; border: none;"></td>
     <td style="padding: 20px; margin: 0 15px; border: none; text-align: center;">
-      <img src="/develop_team/manal.png" alt="NAWAH Team" width="150" />
+      <img src="/public/develop_team/manal.png" alt="NAWAH Team" width="150" />
     </td>
     <td style="width: 80px; border: none;"></td>
     <td style="padding: 20px; margin: 0 15px; border: none; text-align: center;">
-      <img src="/develop_team/mohamed.png" alt="NAWAH Team" width="150" />
+      <img src="/public/develop_team/mohamed.png" alt="NAWAH Team" width="150" />
     </td>
   </tr>
 </table>
@@ -279,7 +279,7 @@ For any inquiries, please contact:
   <tr>
     <td style="padding: 20px; margin: 0 15px; border: none; text-align: center;">
       <h2>NAWAH CEO</h2>
-      <img src="/develop_team/hussein.png" alt="NAWAH CEO" width="150" />
+      <img src="/public/develop_team/hussein.png" alt="NAWAH CEO" width="150" />
     </td>
   </tr>
 </table>
