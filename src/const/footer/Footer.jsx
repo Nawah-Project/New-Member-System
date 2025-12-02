@@ -3,7 +3,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import './footer.css'
 import { Link } from 'react-router-dom';
 export default function Footer() {
     return (
