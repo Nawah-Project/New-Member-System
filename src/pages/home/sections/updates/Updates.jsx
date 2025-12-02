@@ -9,35 +9,30 @@ import "./updates.css";
 export default function Updates() {
     const [index, setIndex] = useState(null);
     useEffect(() => {
-        // Check immediately on mount
         const checkScreenSize = () => {
             window.innerWidth < 900 ? setIndex(0) : setIndex(null);
         };
 
-        // Run on mount
         checkScreenSize();
 
-        // Add resize listener
         window.addEventListener('resize', checkScreenSize);
 
-        // Cleanup
         return () => {
             window.removeEventListener('resize', checkScreenSize);
         };
     }, []);
 
     function increament() {
-        if (index < updatesData.length - 1) setIndex(index + 1);
+        if (index < updatesData.length - 1) setIndex((index) => index + 1);
     }
     function decrement() {
-        if (index > 0) setIndex(index - 1);
+        if (index > 0) setIndex((index) => index - 1);
     }
     return (
         <Container maxWidth="2xl" id="update-section">
             <Box id="section-header">
                 <Typography
                     sx={{
-                        
                         fontSize: { xs: "2rem", md: "3rem" },
                         fontWeight: "bold",
                         fontStyle: "italic",
@@ -99,7 +94,6 @@ export default function Updates() {
 function UpdateCard(update, increament = null, decrement = null, index = null) {
 
     const UpdateImage = memo(({ src, title }) => <CardMedia
-
         component={'img'}
         loading="lazy"
         decoding="async"
@@ -119,11 +113,13 @@ function UpdateCard(update, increament = null, decrement = null, index = null) {
                         : <Skeleton variant="rectangular" sx={{ borderRadius: "5px", color: "gray" }} width={'100%'} height={300} />
                 }
             </Box>
+
             <Typography variant="p" sx={{ marginBlock: "4%" }}>
                 <Typography color="#32C8ff" fontWeight="700" variant="strong">{update.subtitle}</Typography> | <Typography fontWeight="500" variant="small">{update.date}</Typography>
             </Typography>
             <Typography variant="h3" fontSize={"1.5rem"} fontWeight={'bold'} sx={{ marginBlock: "1%" }}>{update.title}</Typography>
             <Typography variant="p" fontWeight='500' sx={{ marginBlock: "1%" }}>{update.description}</Typography>
+
             <Grid container spacing={2} alignItems={'center'} sx={{
                 display: {
                     md: "none",
