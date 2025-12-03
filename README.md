@@ -133,6 +133,7 @@ new_member_system/
 
 - `/` - Home page
 - `/overview` - Overview page
+- `/join` - Join page
 
 ## 🤝 Contributing
 
