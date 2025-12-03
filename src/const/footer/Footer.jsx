@@ -1,4 +1,4 @@
-import { Box, Container, CardMedia, Typography } from '@mui/material'
+import { Box, CardMedia, Typography } from '@mui/material'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
