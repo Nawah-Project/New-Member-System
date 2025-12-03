@@ -1,4 +1,4 @@
-import { Box, CardMedia, Typography } from '@mui/material'
+import { Box, CardMedia, Skeleton, Typography } from '@mui/material'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -16,16 +16,7 @@ export default function Footer() {
             >
                 <Box
                 >
-                    <CardMedia
-                        sx={{
-                            imageRendering: 'optimizeQuality',
-                        }}
-                        component={'img'}
-                        loading="lazy"
-                        decoding="async"
-                        image="/footer/footer.gif"
-                        alt="footer.gif"
-                    />
+                    <CardMedia component="video" src="home/landing/landing_video.mp4" autoPlay loop muted disablePictureInPicture sx={{ width: "100%" }} />
                 </Box>
                 <Box sx={{
                     display: 'flex',

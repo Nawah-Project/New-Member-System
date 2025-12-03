@@ -8,16 +8,37 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import { styled } from '@mui/material/styles';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Join() {
     const [index, setIndex] = useState(0);
 
+    const [isSmallMobile, setIsSmallMobile] = useState(false);
+
+    useEffect(() => {
+            const checkScreenSize = () => {
+                window.innerHeight < 801 ? setIsSmallMobile(true) : setIsSmallMobile(false);
+            };
+
+            checkScreenSize();
+
+            window.addEventListener('resize', checkScreenSize);
+
+            return () => {
+                window.removeEventListener('resize', checkScreenSize);
+            };
+        }, []);
+
     return (
         <Container maxWidth="2xl" sx={{
             marginTop: "100px",
-            height: {
-                xs: index == 0 ? "77vh" : "48vh",
+            height: isSmallMobile ? {
+                xs: index == 0 ? "85vh" : "52vh",
+                sm: index == 0 ? "85vh" : "53vh",
+                md: index == 0 ? "93vh" : "58vh",
+                lg: index == 0 ? "105vh" : "68vh",
+            } : {
+                xs: index == 0 ? "75vh" : "45vh",
                 sm: index == 0 ? "85vh" : "53vh",
                 md: index == 0 ? "93vh" : "58vh",
                 lg: index == 0 ? "105vh" : "68vh",

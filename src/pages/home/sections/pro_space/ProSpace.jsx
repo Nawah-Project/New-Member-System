@@ -91,7 +91,7 @@ function ProSpaceCard(data, increament = null, decrement = null, index = null) {
 
     return (
         <Box id="update-card" key={data.id}>
-            <Box id="image-container" sx={{ overflow: "hidden", borderRadius: "5px", background: "blue", width: "100%", height: "100%" }}>
+            <Box id="image-container" sx={{ overflow: "hidden", borderRadius: "5px", width: "100%", height: "100%" }}>
                 {
                     data.image ? <ProSpaceImage src={data.image} title={data.desc} />
                         : <Skeleton variant="rectangular" sx={{ borderRadius: "5px", color: "gray" }} width={'100%'} height={300} />
