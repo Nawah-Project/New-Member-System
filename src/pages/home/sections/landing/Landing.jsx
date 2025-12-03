@@ -1,4 +1,5 @@
 import { Container, Box, Typography, Button } from "@mui/material"
+import { Link } from "react-router-dom"
 import CardMedia from '@mui/material/CardMedia';
 import "./landing.css"
 export default function Landing() {
@@ -39,26 +40,31 @@ export default function Landing() {
                 Nawah <br />Project
             </Typography>
 
-            <Button id="landing-btn" variant="contained" sx={{
-                zIndex: 10,
-                bottom: {
-                    xs: "10%",
-                    lg: "5%"
-                },
-                padding: {
-                    xs: "2% 4%",
-                    md: "1% 2%",
-                    lg: "1% 3%"
-                },
-                backgroundColor: "rgba(0, 0, 0, 0.797)",
-                color: "white",
-                '&:hover': {
-                    backgroundColor: "white",
-                    color: "black"
-                }
-            }}>
-                <Typography variant="h5" fontSize={{ xs: "1.5rem", lg: "2rem" }} fontWeight={700}>انضم الان</Typography>
-            </Button>
+            <Link to="/join">
+                <Button id="landing-btn" variant="contained" sx={{
+                    zIndex: 10,
+                    bottom: {
+                        xs: "10%",
+                        lg: "5%"
+                    },
+                    padding: {
+                        xs: "2% 4%",
+                        md: "1% 2%",
+                        lg: "1% 3%"
+                    },
+                    backgroundColor: "rgba(0, 0, 0, 0.797)",
+                    color: "white",
+                    '&:hover': {
+                        backgroundColor: "white",
+                        color: "black"
+                    }
+                }}
+
+
+                >
+                    <Typography variant="h5" fontSize={{ xs: "1.5rem", lg: "2rem" }} fontWeight={700}>انضم الان</Typography>
+                </Button>
+            </Link>
         </Container>
     )
 }

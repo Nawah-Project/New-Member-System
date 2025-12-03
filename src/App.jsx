@@ -3,7 +3,7 @@ import Home from "./pages/home/Home"
 import Overview from "./pages/overview/Overview"
 import Header from "./const/header/Header"
 import Footer from "./const/footer/Footer"
-
+import JoinPage from "./pages/join/Join"
 function App() {
 
   return (
@@ -14,6 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/overview" element={<Overview />} />
+
+        <Route path="/join" element={<JoinPage />} />
       </Routes>
 
       <Footer />
