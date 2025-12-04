@@ -9,7 +9,7 @@ export default function Specialize() {
                 backgroundImage: 'url(home/specialize/specialize-bg.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                height: '90vh',
+                height: '100vh',
                 paddingBlock: {
                     xs: '30%',
                     sm: '10%',
@@ -25,7 +25,7 @@ export default function Specialize() {
 
             {/* Right Content */}
             <Grid size={{ xs: 6, md: 3 }} height={{
-                xs: '30vh',
+                xs: '40vh',
                 sm: '40vh',
                 md: '70vh'
             }}>
@@ -45,7 +45,7 @@ export default function Specialize() {
 
             {/*  Left Content */}
             <Grid size={{ xs: 6, md: 3 }} height={{
-                xs: '30vh',
+                xs: '40vh',
                 sm: '40vh',
                 md: '70vh'
             }}>
@@ -67,7 +67,7 @@ function CenterContent() {
         <Grid size={{ xs: 12, md: 6 }} height={{
             xs: '30vh',
             md: '70vh'
-        }}>
+        }} >
             <Box sx={{ height: '100%', display: "flex", flexDirection: "column", justifyContent: 'center', alignItems: 'start', gap: 3, paddingInline: '2%' }}>
                 <Typography variant="h2" fontStyle={'italic'} fontWeight={'bold'}>اختر تخصصك</Typography>
                 <Typography variant="p" fontSize={{ xs: '1rem', md: '1.5rem' }} fontWeight={'bold'}>صِغ أكوادك لتبني المستقبل، أو أطلق خيالك في تصميم تجربة تبهر المستخدمين، أو خطّط لمشاريع تُحدث فرقًا حقيقيًا في العالم. هناك تخصصات تتناسب مع كل شغفٍ وطموح.</Typography>
