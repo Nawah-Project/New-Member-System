@@ -31,8 +31,8 @@ export default function Welcome() {
                         <Typography variant="h1" fontWeight="bold" fontStyle={'italic'}
                             sx={{
                                 fontSize: {
-                                    xs: "2rem",
-                                    sm: "3rem",
+                                    xs: "4rem",
+                                    sm: "6rem",
                                     md: "5rem",
                                 },
                                 color: '#fff',
