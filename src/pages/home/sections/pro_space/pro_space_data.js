@@ -2,17 +2,17 @@ export const pro_space_data =
     [
         {
             id: 1,
-            image: "home/pro_space/pro_one.jpeg",
+            image: "home/pro_space/pro_one.webp",
             desc: "استكشف مساحة نواة، وانضم إلى مجتمع من المبدعين الشغوفين بمجالاتهم، كلٌ منهم يسعى لرفع مستواه وصنع بصمته.",
         },
         {
             id: 2,
-            image: "home/pro_space/pro_two.jpeg",
+            image: "home/pro_space/pro_two.webp",
             desc: "شارك في فعاليات نواة، وتحديات بناء المشاريع، واختبر متعة التعلم الجماعي الذي لا يُنسى.",
         },
         {
             id: 3,
-            image: "home/pro_space/pro_three.jpeg",
+            image: "home/pro_space/pro_three.webp",
             desc: "نواة تكبر مع تجاربكم، نتعلّم من مشاكلكم، ونبني معًا تجربة تليق بطموحاتكم وتدفعكم خطوة أبعد كل يوم.",
         },
     ];

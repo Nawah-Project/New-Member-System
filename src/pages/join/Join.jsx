@@ -6,9 +6,8 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-import { styled } from '@mui/material/styles';
 import { useState, useEffect } from "react";
+import ProgressBar from "../../const/progress/ProgressBar";
 
 export default function Join() {
     const [index, setIndex] = useState(0);
@@ -148,25 +147,6 @@ function PageHeader() {
 
 function PageFooter({ index, setIndex }) {
 
-    const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-        height: 10,
-        borderRadius: 5,
-        [`&.${linearProgressClasses.colorPrimary}`]: {
-
-            backgroundColor: '#141e37',
-            ...theme.applyStyles('dark', {
-                backgroundColor: '#141e37',
-            }),
-        },
-        [`& .${linearProgressClasses.bar}`]: {
-            borderRadius: 5,
-            backgroundColor: '#456aa7',
-            ...theme.applyStyles('dark', {
-                backgroundColor: '#456aa7',
-            }),
-        },
-    }));
-
     return (
         <Box sx={{ paddingInline: '3%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBlock: '1%' }}>
@@ -175,7 +155,7 @@ function PageFooter({ index, setIndex }) {
                 >{index == 0 ? 'التالى' : 'ارسال'}</Button>
             </Box>
 
-            <BorderLinearProgress variant="determinate" value={index == 0 ? 50 : 100} sx={{ width: '50%' }} />
+            <ProgressBar value={index == 0 ? 50 : 100} sx={{ width: '50%' }} />
 
             <Typography variant="p" fontWeight="bold" color="black"
                 fontSize={{

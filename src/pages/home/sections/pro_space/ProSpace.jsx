@@ -1,8 +1,9 @@
-import { Box, Typography, CardMedia, Grid ,Stack } from '@mui/material'
+import { Box, Typography, CardMedia, Grid, Stack } from '@mui/material'
 import { pro_space_data } from './pro_space_data'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useEffect, useState, memo } from 'react'
+import ProgressControls, { updateProgress } from '../../../../const/progress/ProgressBar'
 export default function ProSpace() {
 
     const [index, setIndex] = useState(null);
@@ -20,6 +21,12 @@ export default function ProSpace() {
         };
     }, []);
 
+    useEffect(() => {
+        // console.log("index",index);
+        // console.log("length",pro_space_data.length);
+        updateProgress(index, pro_space_data.length, 'pro-space-progress');
+    }, [index]);
+
     function increament() {
         if (index < pro_space_data.length - 1) setIndex((index) => index + 1);
     }
@@ -36,9 +43,9 @@ export default function ProSpace() {
                 backgroundSize: 'cover',
                 paddingInline: '3%',
                 paddingTop: {
-                    xs:"25%",
-                    md:"20%",
-                    lg:"10%"
+                    xs: "25%",
+                    md: "20%",
+                    lg: "10%"
                 },
             }}
 
@@ -52,7 +59,7 @@ export default function ProSpace() {
                         textAlign: 'center',
                         fontSize: {
                             xs: '2rem',
-                            sm:"3rem",
+                            sm: "3rem",
                             md: '5rem',
                         },
                     }
@@ -65,21 +72,26 @@ export default function ProSpace() {
                         <Grid key={update.id} size={{ xs: 12, sm: 12, md: 6, lg: 4 }} alignItems='center'>
                             {ProSpaceCard(update)}
                         </Grid>) : <Grid key={pro_space_data[index].id} size={{ xs: 12, sm: 12, md: 4 }} alignItems='center'>
-                        {ProSpaceCard(pro_space_data[index], increament, decrement, index)}
+                        {ProSpaceCard(pro_space_data[index])}
                     </Grid>}
             </Grid>
+            {index !== null &&
+
+                <ProgressControls id={'pro-space-progress'} index={index} dataLength={pro_space_data.length} increament={increament} decrement={decrement} />
+
+            }
         </Stack>
     )
 }
 
-function ProSpaceCard(data, increament = null, decrement = null, index = null) {
+function ProSpaceCard(data) {
 
     const ProSpaceImage = memo(({ src, title }) => <CardMedia
         component={'img'}
         loading="lazy"
         decoding="async"
         sx={{
-            
+
             borderRadius: "5px",
             width: "100%", height: "100%",
             '&:hover': {
@@ -91,30 +103,14 @@ function ProSpaceCard(data, increament = null, decrement = null, index = null) {
 
     return (
         <Box id="update-card" key={data.id}>
-            <Box id="image-container" sx={{ overflow: "hidden", borderRadius: "5px", width: "100%", height: "100%" }}>
+            <Box id="image-container" sx={{ overflow: "hidden", borderRadius: "5px", width: "100%", height: "100%", aspectRatio: '3/4' }}>
                 {
                     data.image ? <ProSpaceImage src={data.image} title={data.desc} />
-                        : <Skeleton variant="rectangular" sx={{ borderRadius: "5px", color: "gray" }} width={'100%'} height={300} />
+                        : <Skeleton variant="rectangular" sx={{ borderRadius: "5px", color: "gray" }} width={'100%'} height={'100%'} />
                 }
             </Box>
 
             <Typography variant="h3" fontSize={"1.2rem"} textAlign={'center'} fontWeight={'bold'} sx={{ color: "white", paddingBlock: "2%" }}>{data.desc}</Typography>
-
-            <Grid container spacing={2} alignItems={'center'} sx={{
-                display: {
-                    md: "none",
-                }, marginBlock: "4%"
-            }}>
-                <Grid size={10}>
-                    <Box sx={{ height: '2px', backgroundColor: "white", width: "100%" }}></Box>
-                </Grid>
-                <Grid size={1}>
-                    <ArrowForwardIcon sx={{ fontSize: "large", color: index > 0 ? "#32C8ff" : "gray", cursor: "pointer" }} onClick={() => decrement()} />
-                </Grid>
-                <Grid size={1}>
-                    <ArrowBackIcon sx={{ fontSize: "large", color: index < pro_space_data.length - 1 ? "#32C8ff" : "gray", cursor: "pointer" }} onClick={() => increament()} />
-                </Grid>
-            </Grid>
         </Box>
     );
 }
