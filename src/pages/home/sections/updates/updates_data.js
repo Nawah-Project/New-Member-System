@@ -2,7 +2,7 @@ const imagesPath = 'home/last_update/';
 export const updatesData = [
     {
         id: 1,
-        image: `${imagesPath}update-one.jpeg`,
+        image: `${imagesPath}update-one.webp`,
         title: "نظرة على نظام الربح التعليمي",
         date: "2025/10/26",
         subtitle: "انظمة الربح",
@@ -10,7 +10,7 @@ export const updatesData = [
     },
     {
         id: 2,
-        image: `${imagesPath}update-two.png`,
+        image: `${imagesPath}update-two.webp`,
         title: "نظرة على نظام الربح التعليمي",
         date: "2025/10/26",
         subtitle: "مشاريع الاعضاء",
@@ -19,7 +19,7 @@ export const updatesData = [
     },
     {
         id: 3,
-        image: `${imagesPath}update-three.jpg`,
+        image: `${imagesPath}update-three.webp`,
         title: "متابعة تقدمك في كتابة الكود أصبحت أسهل",
         date: "2025/10/26",
         subtitle: "تطوير",

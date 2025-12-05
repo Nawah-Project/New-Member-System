@@ -2,10 +2,8 @@ import { useEffect, useState, memo } from "react";
 import { updatesData } from "./updates_data";
 import { Box, Container, Typography, Grid, CardMedia, Skeleton } from "@mui/material";
 import NearMeIcon from "@mui/icons-material/NearMe";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "./updates.css";
-
+import ProgressControls, { updateProgress } from "../../../../const/progress/ProgressBar"
 export default function Updates() {
     const [index, setIndex] = useState(null);
     useEffect(() => {
@@ -22,12 +20,17 @@ export default function Updates() {
         };
     }, []);
 
+    useEffect(() => {
+        updateProgress(index, updatesData.length, 'updates-progress');
+    }, [index]);
+
     function increament() {
         if (index < updatesData.length - 1) setIndex((index) => index + 1);
     }
     function decrement() {
         if (index > 0) setIndex((index) => index - 1);
     }
+
     return (
         <Container maxWidth="2xl" id="update-section">
             <Box id="section-header">
@@ -84,14 +87,15 @@ export default function Updates() {
                         <Grid key={update.id} size={{ xs: 12, sm: 12, md: 6, lg: 4 }} alignItems='center'>
                             {UpdateCard(update)}
                         </Grid>) : <Grid key={updatesData[index].id} size={{ xs: 12, sm: 12, md: 4 }} alignItems='center'>
-                        {UpdateCard(updatesData[index], increament, decrement, index)}
+                        {UpdateCard(updatesData[index])}
                     </Grid>}
             </Grid>
+            {index !== null && <ProgressControls id={'updates-progress'} index={index} dataLength={updatesData.length} increament={increament} decrement={decrement} />}
         </Container>
     );
 }
 
-function UpdateCard(update, increament = null, decrement = null, index = null) {
+function UpdateCard(update) {
 
     const UpdateImage = memo(({ src, title }) => <CardMedia
         component={'img'}
@@ -107,7 +111,7 @@ function UpdateCard(update, increament = null, decrement = null, index = null) {
 
     return (
         <Box id="update-card" key={update.id}>
-            <Box id="image-container" sx={{ overflow: "hidden", borderRadius: "5px", marginBottom: "2%" }}>
+            <Box id="image-container" sx={{ overflow: "hidden", borderRadius: "5px", marginBottom: "2%" , aspectRatio: '16/9' }}>
                 {
                     update.image ? <UpdateImage src={update.image} title={update.title} />
                         : <Skeleton variant="rectangular" sx={{ borderRadius: "5px", color: "gray" }} width={'100%'} height={300} />
@@ -119,22 +123,7 @@ function UpdateCard(update, increament = null, decrement = null, index = null) {
             </Typography>
             <Typography variant="h3" fontSize={"1.5rem"} fontWeight={'bold'} sx={{ marginBlock: "1%" }}>{update.title}</Typography>
             <Typography variant="p" fontWeight='500' sx={{ marginBlock: "1%" }}>{update.description}</Typography>
-
-            <Grid container spacing={2} alignItems={'center'} sx={{
-                display: {
-                    md: "none",
-                }, marginBlock: "4%"
-            }}>
-                <Grid size={10}>
-                    <Box sx={{ height: '2px', backgroundColor: "gray", width: "100%" }}></Box>
-                </Grid>
-                <Grid size={1}>
-                    <ArrowForwardIcon sx={{ fontSize: "large", color: index > 0 ? "#32C8ff" : "gray", cursor: "pointer" }} onClick={() => decrement()} />
-                </Grid>
-                <Grid size={1}>
-                    <ArrowBackIcon sx={{ fontSize: "large", color: index < updatesData.length - 1 ? "#32C8ff" : "gray", cursor: "pointer" }} onClick={() => increament()} />
-                </Grid>
-            </Grid>
         </Box>
     );
 }
+
