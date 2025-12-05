@@ -11,7 +11,7 @@ export default function Specialize() {
                 backgroundPosition: 'center',
                 height: '100vh',
                 paddingBlock: {
-                    xs: '30%',
+                    xs: '30% 15%',
                     sm: '10%',
                     md: '0%'
                 },
