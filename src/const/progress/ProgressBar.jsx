@@ -38,6 +38,5 @@ export function updateProgress(index, dataLength, id) {
     if (progressBar) {
         progressBar.style.backgroundColor = "#5579f2";
         progressBar.style.width = `${(index) / (dataLength - 1) * 100}%`;
-        console.log('width: ' + progressBar.style.width);
     }
 }

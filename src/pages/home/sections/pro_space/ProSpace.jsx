@@ -1,7 +1,5 @@
 import { Box, Typography, CardMedia, Grid, Stack } from '@mui/material'
 import { pro_space_data } from './pro_space_data'
-// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useEffect, useState, memo } from 'react'
 import ProgressControls, { updateProgress } from '../../../../const/progress/ProgressBar'
 export default function ProSpace() {
@@ -22,8 +20,6 @@ export default function ProSpace() {
     }, []);
 
     useEffect(() => {
-        // console.log("index",index);
-        // console.log("length",pro_space_data.length);
         updateProgress(index, pro_space_data.length, 'pro-space-progress');
     }, [index]);
 
@@ -41,12 +37,13 @@ export default function ProSpace() {
                 backgroundImage: 'url(/home/pro_space/pro_space_bg.jpg)',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
-                paddingInline: '3%',
+                paddingInline: '24px',
                 paddingTop: {
                     xs: "25%",
                     md: "20%",
                     lg: "10%"
                 },
+                paddingBottom: "5%"
             }}
 
         >
@@ -58,7 +55,7 @@ export default function ProSpace() {
                         color: 'white',
                         textAlign: 'center',
                         fontSize: {
-                            xs: '2rem',
+                            xs: '3rem',
                             sm: "3rem",
                             md: '5rem',
                         },
@@ -91,9 +88,6 @@ function ProSpaceCard(data) {
         loading="lazy"
         decoding="async"
         sx={{
-
-            borderRadius: "5px",
-            width: "100%", height: "100%",
             '&:hover': {
                 transform: "scale(1.1)",
                 transition: "transform 0.5s ease-in-out",
@@ -103,10 +97,12 @@ function ProSpaceCard(data) {
 
     return (
         <Box id="update-card" key={data.id}>
-            <Box id="image-container" sx={{ overflow: "hidden", borderRadius: "5px", width: "100%", height: "100%", aspectRatio: '3/4' }}>
+            <Box id="image-container" sx={{
+                overflow: "hidden",
+                aspectRatio: '0.75' }}>
                 {
                     data.image ? <ProSpaceImage src={data.image} title={data.desc} />
-                        : <Skeleton variant="rectangular" sx={{ borderRadius: "5px", color: "gray" }} width={'100%'} height={'100%'} />
+                        : <Skeleton variant="rectangular" sx={{ borderRadius: "5px", color: "gray" , width : "100%", height : "100%"}} />
                 }
             </Box>
 

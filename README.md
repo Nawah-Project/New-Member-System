@@ -83,7 +83,7 @@ Before you begin, ensure you have the following installed:
 Start the development server with hot module replacement:
 
 ```bash
-npm start
+npm run start
 ```
 
 The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
