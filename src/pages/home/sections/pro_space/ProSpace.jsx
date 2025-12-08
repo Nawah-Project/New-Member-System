@@ -37,7 +37,10 @@ export default function ProSpace() {
                 backgroundImage: 'url(/home/pro_space/pro_space_bg.jpg)',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
-                paddingInline: '24px',
+                paddingInline: {
+                    xs: "24px",
+                    md: "3%",
+                },
                 paddingTop: {
                     xs: "25%",
                     md: "20%",
@@ -63,12 +66,12 @@ export default function ProSpace() {
                 }
             >مساحة مشروع نواة</Typography>
 
-            <Grid container spacing={2}>
+            <Grid container spacing={2} alignItems={'center'} justifyContent={'center'}>
                 {index === null ?
                     pro_space_data.map((update) =>
-                        <Grid key={update.id} size={{ xs: 12, sm: 12, md: 6, lg: 4 }} alignItems='center'>
+                        <Grid key={update.id} size={{ xs: 12, sm: 12, md: 6, lg: 3 }} >
                             {ProSpaceCard(update)}
-                        </Grid>) : <Grid key={pro_space_data[index].id} size={{ xs: 12, sm: 12, md: 4 }} alignItems='center'>
+                        </Grid>) : <Grid key={pro_space_data[index].id} size={{ xs: 12, sm: 12, md: 4 }} >
                         {ProSpaceCard(pro_space_data[index])}
                     </Grid>}
             </Grid>
@@ -105,8 +108,7 @@ function ProSpaceCard(data) {
                         : <Skeleton variant="rectangular" sx={{ borderRadius: "5px", color: "gray" , width : "100%", height : "100%"}} />
                 }
             </Box>
-
-            <Typography variant="h3" fontSize={"1.2rem"} textAlign={'center'} fontWeight={'bold'} sx={{ color: "white", paddingBlock: "2%" }}>{data.desc}</Typography>
+            <Typography variant="h3" textAlign={'center'} fontWeight={'bold'} fontSize={'1.2rem'} sx={{ color: "white", paddingBlock: "2%" , overflow : 'hidden', textOverflow : 'ellipsis', whiteSpace : 'nowrap'}}>{data.desc}</Typography>
         </Box>
     );
 }
